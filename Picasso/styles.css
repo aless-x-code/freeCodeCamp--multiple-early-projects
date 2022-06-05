@@ -1,0 +1,39 @@
+
+body {
+  background-color: rgb(184, 132, 46); /*  red green blue*/
+} 
+
+#back-wall { 
+  background-color: #8B4513; 
+  width: 100%; /* width 100%; relative of the container and screen */
+  height: 60%; /* height 60%; relative of the container and screen */
+  position: absolute; /* by default html is from top to bottom; absolute property take it out of flow and you can postion it manually within its container */
+  /* SCREEN READERS: screen reading will still read content based on hmtl flow */
+  top: 0; /* manually move it to the top */
+  left: 0; /* manually move it to the left */
+  z-index: -1 /* layers; send it to the back. NOTE; as a rule, absolute/relative positioned elements will alway be in front of relative/default element. If body become position: absolute, the z-index=-1 will go behind it */
+}
+
+#offwhite-character {  /* offwhite characters container */
+  width: 300px;
+  height: 550px;
+  background-color: ghostwhite;
+  position: absolute;
+  top: 20%; /* top - 20% */
+  left: 17.5%; /* left - 17.5% */
+}
+
+#white-hat { /*  targets the white hat character */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 120px 140px 180px; 
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: ghostwhite;
+  position: absolute;
+  top: -140px;
+  left: 0;
+}
+

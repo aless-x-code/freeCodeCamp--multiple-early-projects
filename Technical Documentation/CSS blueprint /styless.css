@@ -1,0 +1,164 @@
+html,
+body {
+  min-width: 290px; /* set the minimum width of the html and body elements */
+  color: #4d4e53; /* text color */
+  background-color: #ffffff; /* background color */
+  font-family: "Open Sans", Arial, sans-serif; /* font-family and fall backs */
+  line-height: 1.5; /* line spacing */
+}
+
+#navbar {
+  /* targets the nav bar (sidebar) */
+  position: fixed;
+  /* 
+    Positioning: 
+    --Static: this is the deault. This means the container is placed normally, as per html structure, and upper left corner. 
+
+    --Relative: relative to its orginal position. Say, <p> in a container with a top: 10px; would move 10px from its original position (minus parent's container padding, if any). This also activates z-index. Giving a container a relative position, will also make childs positioning(top,left,bottom,right) absolute to the container 
+    [It will fucking leave the page and not wrap, how rude this motherfucker]
+
+    --Absolute: positioning it in regards to its parent (element will removed from stacking / flow of hmtl
+    [still stay within viewport, unless negative values]
+
+    --Fixed: fixed to the viewport. It will exit its container. 
+
+    --Sticky: Will act as a static element. But, if you scroll past it, it will stay fixed to its parent't container. 
+  
+    */
+  min-width: 290px;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 100%; /* cover 100% height */
+  border-right: solid;
+  border-color: rgba(0, 22, 22, 0.4);
+}
+
+header {
+  color: black;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: thin;
+}
+
+#navbar ul {
+  height: 88%; /* allows unordered list to spread. Giving it 100% height would jam all list item into the screen, rather 88% allows it to spread and scroll to reach other items */
+  padding: 0px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /*  
+  Overflow determines what happens to content that doesn't fit
+  --visible; default, content renders outside of the box
+  --hidden; clipped and hidden
+  --scroll: clpped and scrollbar is added
+  --auto: same as scroll, but only add scrollbar when needed
+  *Only works for elements with a specified height
+
+  --overflow-x: specifies what to do with on x axis
+  --overflow-y: what to do with content on y axis
+  */
+}
+
+#navbar li {
+  color: #4d4e53;
+  border-top: 1px solid;
+  list-style: none; /* removes bullet points */
+  width: 100%;
+}
+
+#navbar a {
+  display: block;
+  padding: 10px 30px;
+  color: #4d4e53;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#main-doc {
+  position: absolute;
+  margin-left: 310px;
+  padding: 20px;
+  margin-bottom: 110px;
+}
+
+#main-doc header {
+  text-align: left;
+  margin: 0px;
+}
+
+section article {
+  color: #4d4e53;
+  margin: 15px;
+  font-size: 0.96em;
+}
+
+section li {
+  margin: 15px 0px 0px 20px;
+}
+
+code {
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  background-color: #f7f7f7;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 815px) {
+  /* when media screen is below */
+  /* 
+  @media (max-width:632px): for a WINDOW with a max width X, apply the following changes
+
+  @media screen and (max-width:632px): for a SCREEN and WINDOW of X, apply the following changes. (specifing a screen as a opposed to other media types). Other media could be print
+
+  @media only screen and (max-width:632px): keyword ONLY: it's still recommended to prefix media queries with only if you want to hide the styles from other, less common browsers.
+  */
+
+  /* For mobile phones: */
+  #navbar ul {
+    border: 1px solid; /* give border to ul nav bar */
+    height: 207px; /* nav bar ul height */
+  }
+
+  #navbar {
+    background-color: white;
+    position: absolute; /* nav bar position absolute in reference to parent (body in this case) */
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* width 100% */
+    max-height: 275px; /* nav bar max height */
+    border: none;
+    z-index: 1;
+    border-bottom: 2px solid;
+  }
+
+  #main-doc {
+    position: relative; /* relative to its original position. */
+    margin-left: 0px;
+    margin-top: 270px; /* reduce 270px (sidebar) from the top */
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  /* for a screen with with less than 400px, apply... */
+  #main-doc {
+    margin-left: -10px;
+  }
+
+  code {
+    margin-left: -20px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 45px;
+    min-width: 233px;
+  }
+}

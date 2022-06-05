@@ -1,0 +1,83 @@
+html {
+  box-sizing: border-box; /*  Different browsers can apply default margin and padding values to specific elements. To make sure your piano looks correct, you need to reset the box model */
+  /* border-box "boxes" the content, padding and borders will reverse within */
+  /* Default element's values https://www.w3schools.com/cssref/css_default_values.asp */
+}
+
+*,
+*::before,
+*::after {
+  /* We are using *::before *::after so that anything before or after * (which is actually outside of *) is also targeted */
+  box-sizing: inherit; /* inherit from paterent; html */
+}
+
+#piano {
+  /* piano container */
+  background-color: #00471b;
+  width: 992px;
+  height: 290px;
+  margin: 80px auto; /* will center the cotnainer horzontally. NOT vertically, hmtl elements are block elements stack on top of each other, so calculating auto vertical margin is not possible */
+  padding: 90px 20px 0 20px;
+  position: relative; /* when giving logo an absolute position, it refers to the screen for positioning. Giving its parent (#piano) a "relative" position, it gives logo a point of reference */
+  border-radius: 10px;
+}
+
+.keys {
+  /* keys container */
+  background-color: #040404;
+  width: 949px;
+  height: 180px;
+  padding-left: 2px;
+  overflow: hidden; /* makes wrapping (ref: media) keys hide */
+}
+
+.key {
+  /* key of the piano */
+  background-color: #ffffff;
+  position: relative;
+  width: 41px;
+  height: 175px;
+  margin: 2px;
+  float: left; /*  the elements (keys) float to the left, all block elements will get in line (float) as space is avalilable */
+  border-radius: 0 0 3px 3px;
+}
+
+.key.black--key::after {
+  /* this adds content AFTER the black keys, but still within black keys */
+  background-color: #1d1e22;
+  content: ""; /* this makes the therafter content empty */
+  position: absolute;
+  left: -18px;
+  width: 32px;
+  height: 100px;
+  border-radius: 0 0 3px 3px;
+}
+
+.logo {
+  width: 200px;
+  position: absolute;
+  top: 23px;
+}
+
+@media (max-width: 768px) {
+  /* when media screen is below 768px ... */
+  #piano {
+    width: 358px;
+  }
+  .keys {
+    width: 318px; /* makes the keys container drop to 318px */
+  }
+  .logo {
+    width: 150px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  /* when browser window is bigger than 769px, but smaller than 1199px */
+  #piano {
+    width: 675px;
+  }
+  .keys {
+    width: 633px;
+  }
+}

@@ -1,0 +1,165 @@
+html {   /* Selects all */
+  box-sizing: border-box; /* This "boxes" an element, padding and border will be set by item's actual width and height  */
+}
+
+body {    /* targeting the body */
+  font-family: sans-serif;  /* no fall back */
+  color: #0a0a23; /* font color */
+}
+
+section { /* emborders the whole table*/
+  max-width: 40rem; /* 40 of the root em; responsive :) */
+  margin: 0 auto; /* Zero margin top and bottom, auto on the side for centering */
+  border: 2px solid #d0d0d5;
+}
+
+h1 {
+  max-width: 37.25rem; /* relative; to the root default 16px (16x37.25 = 596px) */ 
+  margin: 0 auto; /* centers element */
+  padding: 1.5rem 1.25rem;
+}
+
+h1 .flex { /* target the h1 flex container, parent of span(AcmeWidgetCorp) and span(Balance Sheet) */
+  display: flex; /* establishing a flex box/container */
+  flex-direction: column-reverse; /*  this will display the nested elements from bottom to top, in a column */
+  gap: 1rem; /* separation/gap between elements at 1x root size (or double spaced)*/
+}
+
+h1 .flex span:first-of-type { /* Targets h1 .flex, but the first span (AcmeWidgetCorp)*/
+  font-size: 0.7em; 
+}
+
+h1 .flex span:last-of-type { /* Targets the h1 .flex last's span element (Balance Sheet)*/
+  font-size: 1.2em; /* 1.2 font size of the parent elements */
+}
+
+#years { /* targets ID years; the black label year container*/
+  display: flex; /* turn it into a flexbox */
+  justify-content: flex-end; /* shift it to the end (to the right) */
+  top: 0; /* fixes it to the top of container */
+  position: sticky; /* It make row stick as the user scrolls down the page*/
+  color: #fff;
+  background-color: #0a0a23;
+  z-index: 999; /* ?? */
+  margin: 0 -2px; /* vertical zero; -2px horizontal*/
+  padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0; /* vertical 1/2 of the root; right = 1.25root + 2px; left */
+}
+
+#years span[class] { /* targets all span elements in the #years container, that have a class */ 
+  font-weight: bold;
+  width: 4.5rem; /* each span is given a 4.5 x root width (relative), creates separation */
+  text-align: right; /* shift text to the right within its container */
+}
+
+.table-wrap { /* targets the container surrounding the 3 tables */
+  padding: 0 0.75rem 1.5rem 0.75rem; /* horizontal;.75root top;zero bottom;1.5root */
+}
+
+table { /* targets table elements, being 3*/
+  border: 0; /* hide borders */
+  border-collapse: collapse; /* removes the space between the element's borders, now borders will touch side by side */
+  width: 100%;  /* table width set to fill container*/
+  position: relative; 
+  margin-top: 3rem;
+}
+
+table caption { /* targets the table's captions */
+  color: #356eaf;
+  font-size: 1.3em; /* 1.3x the parent font */
+  font-weight: normal;
+  position: absolute; /* by default shift it to top left ;;;;; relative to the ancestor (table-wrap) */
+  top: -2.25rem; /* move up -2.25x root of the ancestor (table-wrap)  */
+  left: 0.5rem; /* move left 0.5x root of the ancestor (table-wrap) */
+}
+
+tbody td { /* targets table data cells (those cells with the $ number */
+  width: 100vw; /* 100 width of the available viewport */
+  min-width: 4rem;
+  max-width: 4rem;
+}
+
+tbody th { /* targets the table row heading */
+  width: calc(100% - 12rem);  /* width = 100%, minus (12root) */
+}
+
+tr[class="total"] { /* Targets table tow (tr) elements, whose class is equal(=) to "total" */
+  border-bottom: 4px double #0a0a23;
+  font-weight: bold;
+}
+
+tr[class="total"] th{ /* Of the table rows (tr) w/ class=total, target their table heads (th)  */
+  text-align: left;
+  padding: 0.5rem 0 0.25rem 0.5rem; /* top;.5rem right;0 bottom;.25rem left;.5rem */
+
+}
+
+tr.total td { /* Targets all table row (tr) elements whose class includes "total" */
+  text-align: right;
+  padding: 0 0.25rem;
+}
+
+tr.total td:nth-of-type(3) {  /* this targes table rows (tr) whose class includes "total" (tr.total), but only the 3rd (3) table data element (td); the current year one */
+  padding-right: 0.5rem;
+}
+
+tr.total:hover { /*  targets table row elements with a class of total, when hovering mouse */
+  background-color: #99c9ff;
+}
+
+td.current { /* targets table data cells with a class of current */
+  font-style: italic;
+}
+
+tr.data { /* targets table rows with a class of data */
+  background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
+
+tr.data th { /* targets the table heads of the table rows with a class of data; Cash Checking Savings Loans Expenses Credit */
+  text-align: left;
+  padding-top: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+tr.data th .description { /* from the table rows with a class of data, target the table heads with the class of description (the p elements describing the Cash Checking Total Loan Expenses Credit */
+  display: block; /* turn into a block so it stack/collapses down, rather than being in line */
+  font-style: italic;
+  font-weight: normal; 
+  padding: 1rem 0 0.75rem;
+  margin-right: -13.5rem;
+}
+
+tr.data td { /* targets the table data cells from the table rows with a class of data (the $ numbers) */
+  text-align: right;
+  vertical-align: top;
+  padding: 0.3rem 0.25rem 0;
+  
+}
+
+tr.data td:last-of-type {
+  padding-right: 0.5rem;
+}
+
+span:not(.sr-only) { /*targets span elements, but not those with a .sr-only class */
+  font-weight: normal;
+}
+
+ /* THIS IS A BLUEPRINT THAT HIDDES AND PUSHES AWAY ELEMENTS FROM THE PAGE, to ensure 100% ocult. But still read by accesibilty */ 
+span[class~="sr-only"] { /* Targets span elements, whose class includes(~=) "sr-only". Purpose; Visually hidding span elements, but still announced by screen readers */
+  border: 0 !important; /* making border invisible */
+  clip: rect(1px, 1px, 1px, 1px) !important; /* Works for absolute/fixed positioned elements; it clips from top left corner. Clips immedtialy after the border (moves the border) (*Note: clip doesn't move content/text within. only the shape) https://www.w3schools.com/cssref/playdemo.asp?filename=playcss_clip
+  *Note: clip here is only being used to activate clip-path
+  */
+  clip-path: inset(50%) !important; /* clip-path is the shape of the clip: inset, innerly clip, 50% from top right bottom left make content disappear  */
+  -webkit-clip-path: inset(50%) !important; /* ensuring compatibility for chorme/safari (Websit = their browser engine */
+  width: 1px !important; /* !important overrides previous parent/root properties and sets it at !important labeled property*/
+  height: 1px !important;
+  overflow: hidden !important;
+  White-space: nowrap !important; /* Property controls how text behaves; Text will never wrap to the next line. The text continues on the same line */
+  position: absolute !important;
+  padding: 0 !important;
+  margin: -1px !important;
+}
+
+
+
+

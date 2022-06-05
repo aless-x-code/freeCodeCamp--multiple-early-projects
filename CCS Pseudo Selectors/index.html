@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Balance Sheet</title>
+         <link rel="stylesheet" type="text/css" href="./styles.css">
+    </head>
+    <body>
+        <main>
+            <section> <!-- enborders the whole table-->
+                <h1> <!-- heading + subtitle-->
+                    <span class="flex">   <!--creates a flexbox container for the 2 spans-->
+                        <span>AcmeWidgetCorp</span> <!--creating separation in heading elements so that we can later reverse them in CSS for accesicility screen readers: reading first the balance sheet, then the company, will make the reader think the company belongs to the balance sheet.  -->
+                        <span>Balance Sheet</span>
+                    </span>
+                </h1>
+                <div id="years" aria-hidden="true"> <!-- black-label year container-->    <!--aria-hidden to hide this section to screen reader; it will be confusing to hear the company and then year, no hearing reference -->                  
+                    <span class="year">2019</span> <!--year containers x 3-->
+                    <span class="year">2020</span> 
+                    <span class="year">2021</span> 
+                </div>
+                <div class="table-wrap"> <!--container surrounding the 3 tables-->
+                    <table>  <!-- Table 1; Assets -->
+                        <caption>Assets</caption> <!-- table title, must be place first in hiearchy-->
+                        <thead> <!--Invisible, only for screen reading purposes--> <!--table head, as specified below, this is a row-->
+                            <tr> <!--table row-->
+                              <td></td> <!--empty. Needed for screen reader 4 colum layout-->
+                              <th><span class="sr-only year">2019</span></th> <!--screen reader only; year-->
+                              <th><span class="sr-only year">2020</span></th>
+                              <th class="current"><span class="sr-only year">2021</span></th> <!--class current-->
+                            </tr>
+                        </thead>
+                        <tbody> <!-- visibile table beings-->
+                            <tr class="data"> <!--row 1; Cash-->
+                                <th>Cash <span class="description">This is the cash we currently have on hand.</span></th> <!--table head; + span:description-->
+                                <td>$25</td> <!-- data cell 1 -->
+                                <td>$30</td> <!-- data cell 2 -->
+                                <td class="current">$28</td> <!-- data cell 3; class current-->
+                            </tr> 
+                            <tr class="data"> <!--row 2; Checking -->
+                                <th>Checking <span class="description">Our primary transactional account.</span></th> 
+                                <td>$54</td>  
+                                <td class="current">$53</td> 
+                            </tr>
+                            <tr class="data"> <!--row 3-->
+                                <th>Savings <span class="description">Funds set aside for emergencies.</span></th>
+                                <td>$500</td>
+                                <td>$650</td>
+                                <td class="current">$728</td>
+                            </tr>
+                            <tr class="total"> <!--total-->
+                                <th>Total <span class="sr-only">Assets</span></th> <!--Acccesibility; visually, customers should only see "Total" (Seeing "Total Assets" is redoundant). But, accesibility customers should be able to hear "Total Assets", for orientation. -->
+                                <td>$579</td>
+                                <td>$736</td>
+                                <td class="current">$809</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                    <table> <!-- Table 2; Liabilities -->
+                        <caption>Liabilities</caption> <!--table title, must be place first in hiearchy-->
+                        <thead>  <!--Invisible, only for screen reading purposes--> <!--table head, as specified below, this is a row-->
+                            <tr> <!--table row-->
+                                <td></td> <!--empty. Needed for screen reader 4 colum layout-->
+                                <th><span class="sr-only">2019</span></th> <!--screen reader only; year-->
+                                <th><span class="sr-only">2020</span></th>
+                                <th><span class="sr-only">2021</span></th>
+                              <tr>
+                        </thead>
+                        <tbody> <!-- visibile table beings-->
+                            <tr class="data"></tr> <!--row 1; Loans-->
+                                <th>Loans <span class="description">The outstanding balance on our startup loan.</span></th>
+                                <td>$500</td>
+                                <td>$250</td>
+                                <td class="current">$0</td>
+                            <tr class="data"></tr> <!--row 2; Expenses-->
+                                <th>Expenses <span class="description">Annual anticipated expenses, such as payroll.</span></th>
+                                <td>$200</td>
+                                <td>$300</td>
+                                <td class="current">$400</td>
+                            <tr class="data"></tr> <!--row 3; Credit-->
+                                <th>Credit <span class="description">The outstanding balance on our credit card.</span></th>
+                                <td>$50</td>
+                                <td>$50</td>
+                                <td class="current">$75</td>
+                            <tr class="total"> <!--total-->
+                                <th>Total <span class="sr-only">Liabilities</span></th>  <!--Acccesibility: visually, customers should only see "Total" (Seeing "Total Liabilities" is redoundant). But, accesibility customers should be able to hear "Total Liabilities", for orientation. -->
+                                <td>$750</td>
+                                <td>$600</td>
+                                <td class="current">$475</td>
+                            </tr> 
+                        </tbody>
+                    </table> 
+                    <table> <!-- Table 3; Net Worth -->
+                        <caption>Net Worth</caption> <!-- Remeber, a captions must be the first element of a table-->
+                        <thead>
+                            <tr>
+                                <td></td> <!--empty-->
+                                <th><span class="sr-only">2019</span></th>
+                                <th><span class="sr-only">2020</span></th>
+                                <th><span class="sr-only">2021</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="total"> <!--the TOTAL row-->
+                                <th>Total <span class="sr-only">Net Worth</span></th> <!--Acccesibility: visually, customers should only see "Total" (Seeing "Total Net Worth" is redoundant). But, accesibility customers should be able to hear "Total New Worth", for orientation.-->
+                                <td>$-171</td>
+                                <td>$136</td>
+                                <td class="current">$334</td>
+                              </tr> 
+                        </tbody>
+                    </table> 
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
+
+     

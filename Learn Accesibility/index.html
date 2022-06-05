@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meTrita name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+    <title>Accessibility Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
+      <h1>HTML/CSS Quiz</h1>
+      <nav>
+        <ul><!--unordered list or bullet points -->
+          <li><a href="#student-info">INFO</a></li><!-- list or option-->
+          <li><a href="#html-questions">HTML</a></li><!-- wrapped in <a> so we can link them, they are in the menu bar-->
+          <li><a href="#css-questions">CSS</a></li> <!-- connecting nav anchor to id(#) to h2 in main-->
+        </ul> 
+      </nav>
+    </header>
+    <main>
+      <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz"> <!--form creates an interactive form...... method is an attribute that specifies how the form data is sent to the action server; get(default; not encoded, appear in URL) or post(encodes)......action = where to send the data-->
+        <section role="region" aria-labelledby="student-info"><!-- role is an element attribute that gives the Web Accessibility Initive (WAI) (disabled people) info...."region" gives the info of partion or section-->
+          <h2 id="student-info">Student Info</h2> 
+          <div class="info"> <!-- giving it a class of info, child of student info-->
+            <label for="student-name">Name:</label> <!--for= connects the label with the input, throught the input's ID-->
+            <input type="text" name="student-name" id="student-name" /> <!--id attribute=unique id to element--> <!--No placeholder, disabled people confuse placeholders with text-->
+          </div> <!--we are using 3 div to div 3 questions-->
+          <div class="info">
+            <label for="student-email">Email:<!--text of the label--></label>
+            <input type="email" name="student-email" id="student-email" />
+          </div>
+          <div class="info">
+            <label for="birth-date">D.O.B:<span class="sr-only"></span><!--span is for inline elements--></label>
+            <input type="date" name="student-DOB" id="birth-date" /> <!--name attribute = reference for when data is submitted -->
+          </div>
+        </section> <!-- thematic separator; compared to div (divided), section tells to us that it is part of container-->
+        <section role="region" aria-labelledby="html-questions"> 
+          <h2 id="html-questions">HTML</h2>
+          <div class="question-block">
+            <p>1</p>
+            <fieldset class="question" name="html-question-one"> <!-- tag literally draws a box around the related elements-->
+              <legend> The legend element represents a caption for the content of its parent fieldset element<!--Gives a name to the fieldset box, the name cuts the box border and inserts the name-->
+              </legend>
+                <ul class="answers-list">
+                  <li>
+                    <label><input type="radio" value="True" name="q1"/>True</label> <!--by putting the input within the label, the input is associated with the label-->
+                  </li>
+                  <li>
+                    <label><input type="radio" value="False" name="q1"/>False</label> <!--radio gives a circle to select-->
+                  </li>
+                <ul>
+            </fieldset> 
+          </div>
+          <div class="question-block">
+            <p>2</p>
+            <fieldset class="question" name="html-question-two">
+              <legend>A label element nesting an input element is required to have a for attribute with the same value as the input's id
+              </legend>
+                <ul class="answers-list">
+                  <li>
+                    <label><input type="radio" value="True" name="q2"/>True</label> <!-- Value / worth of the input-->
+                  </li>
+                  <li>
+                    <label><input type="radio" value="False" name="q2" />False</label> <!--Both input radios of Q2 are give the same name ("q2") so that user can't select both radios. PS: Q1 has a different name name ("q1"), so that the user can select individual options for both questions-->
+                  </li>
+                <ul>
+            </fieldset>
+        </div>
+        </section>
+        <section role="region" aria-labelledby="css-questions" class="x">
+          <h2 id="css-questions">CSS</h2>
+          <div class="formrow"> 
+            <div class="question-block"> <!--here is where the question block will go-->
+              <label for="customer">Are you a frontend developer?</label>
+            </div>
+            <div class="answer"> <!--here is where the answer will go-->
+              <select name="customer" id="customer" required> <!--select gives a dropdown menu-->
+                <option value="">Select an option</option> <!--default; no value-->
+                <option value="yes">Yes</option> <!--Yes option; value of yes-->
+                <option value='no'>No</option> <!--No option; value of no-->
+              </select>
+            </div>
+            </div>
+            <div class="question-block">
+              <label for="css-questions"> Do you have any questions:</label>
+            </div>
+            <div class="answer">
+              <textarea placeholder="hello" id="css-questions" name="css-questions" rows="5" cols="24"></textarea>
+            </div>
+          </div>
+        </section> <!--aria-labelledby provides an accesibile name, which will be the text inside the element-->
+        <div class="button-container">
+          <button type="submit">Submit</button>
+        </div> 
+      </form>
+    </main>
+    <footer>
+      <address>
+        <a href="https://freecodecamp.org">freeCodeCamp</a><br /> <!--br is a line break-->
+        San Francisco<br />
+        California<br />
+        USA
+      </address>
+    </footer>
+  </body>
+</html>

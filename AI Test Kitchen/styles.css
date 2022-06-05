@@ -1,0 +1,73 @@
+
+
+:root {
+  font-family: 'Space Grotesk', monospace;
+  color: #424242;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+header {   /* AI Test Kitchen : header*/
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0 0.5rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #202124;
+  background-color: #FAFAFA;
+}
+
+.blue {     /* "AI" blue color from the header */
+  color: #1A73E8;
+}
+
+.flexbox-container { /* flexbox container */
+  display: flex; /* turn into flex */
+  flex-wrap: wrap-reverse; /* enable wrap, but reverse since we want the image to go up first */
+  justify-content: center; /* it centers the elements, side by side */
+  margin-top: 5rem;
+}
+
+.flexbox-item { /* targets flexbox items (x2) */
+  margin: 10px; /* specified margin amount will NOT flex*/
+}
+
+.flexbox-item-1 {   /* item 1 */
+  font-weight: lighter;
+  flex-basis: 340px; /* this is the width at which it shrink to, and then wrap*/
+  flex-grow: 1; /* Enables item to grow beyond basis  */
+  max-width: 500px; /* This is the max width the item is allowed to reach */
+  max-height: 550px; /* this is the max heigh; it won't strech beyond this */
+  padding-left: 10px; /* sets some padding between text and left border within item-1*/
+  
+}
+
+.flexbox-item-2 {     /* item 2 */
+  padding-left: 70px; /* this shift the image right a bit more for us*/
+}
+
+
+.flexbox-item-1 h1 {     /* left's h1 */
+  font-weight: 100;
+  margin-bottom: 2.8rem;
+}
+
+#item-1-line-break {   /* Left's line break, inside of the p */
+  margin-bottom: 5px;
+}
+ 
+
+ 
+
+
+
+
+
+
+
+/* 
+
+1. h1 + p + img
+
+
+*/

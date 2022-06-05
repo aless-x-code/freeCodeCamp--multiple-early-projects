@@ -1,0 +1,186 @@
+* {
+	scroll-behavior: smooth; /* When a user clicks on nav bar element, the automatic scroll will be smooth*/
+}
+  
+@media (prefers-reduced-motion:no-preference) { /* Enables smooth scroll only for users who have browser set as "no-prefenrence"*/
+	* {
+	scroll-behavior: smooth;
+	}
+}
+
+body {
+	background: #f5f6f7;
+	color: #1b1b32;
+	font-family: Helvetica;
+	margin: 0;
+}
+
+header {
+	width: 100%; /* width = X% = relative */
+	height: 50px; /* height 50px = 50px. Default is upper left corner */
+	background-color: #1b1b32;
+	display: flex; /* flex= a flexible (it flexes) box. Moves relatively. By deafault places elements horizontaly, left to right*/
+	justify-content: space-between; /* this puts space between the item, but shift first and last items to the edges*/
+	align-items: center; /* items are aligned at center of container */
+	position: fixed; 
+	top: 0;
+}
+
+#logo {
+	width: max(100px, 18vw);
+	background-color: #0a0a23;
+	aspect-ratio: 35 / 4;
+	padding: 0.4rem;
+}
+
+h1 {
+	color: #f1be32; /* hex = hexadecimal = rotating set of letters/number that result in 16 combinations 123456789-ABCDEF (11,12,1A,1F,7A)= hex color = 3 pairs from RGB (Red Green Blue) =e.g. #F1 BE 32*/
+	font-size: min(5vw, 1.2em); /* Xvw = % of the viewport/screen.... em = relative; of the parent element size */
+}
+
+main {
+	padding-top: 50px;
+}
+
+nav {
+	width: 50%;
+	max-width: 300px;
+	height: 50px;
+}
+
+nav > ul {  /* this targets only as far as nav > ul (not the li; that would have been nav > ul > li)*/
+	display: flex; /* flex is a flexing container, relative to the viewport*/
+	justify-content: space-evenly; /* justify-content is used in flexboxes. It gives a instruction on positon*/
+	flex-wrap: wrap; /* wraps the nav bar when small screen */
+	align-items: center;
+	padding-inline-start: 0;
+	margin-block: 0;
+	height: 100%;
+}
+
+nav li {  /* targets the li elements within nav*/
+	color: #dfdfe2;
+	margin: 0 0.2rem;
+	padding: 0.2rem;
+	display: block;
+}
+
+nav li:hover { /* This targets nav li's on hovering*/
+	background-color: #dfdfe2;
+	color: #1b1b32;
+	cursor: pointer; /* changes the mouse pointer into a "pointer" figure*/
+}
+
+
+li > a { /* this targets the anchor elements within the list */
+	color: inherit; /* inherit color from parent, that being li*/
+	/* In visual accesibility, constrast between items should be at least 4.5:1. In this case the hex gives a constrast of 7:1*/
+	text-decoration: none; /* removes underline from nav li > a */
+}
+
+section, .button-container {
+	width: 80%; /* 80% realtive width of the parent container, being */
+	margin: 0 auto 10px auto; /* (top, right, bottom, left) this centers the section*/
+	max-width: 600px; /* section width won't go greater than 600px*/
+}
+
+h1, h2 {
+	font-family: Verdana, sans-serif;
+}
+
+h2 {
+	border-bottom: 4px solid #dfdfe2; /* modify the bottom border, 4px solid color*/
+	margin-top: 0;
+	padding-top: 60px;
+}
+
+.info {
+	padding: 10px 0 0 5px; 
+}	
+
+.sr-only {       /* This is a blueprint to visually hide text, but that screen readers can read it*/
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+
+}
+
+p::before { /* this will put the "Question #" text before the <p> text */
+	content: "Question #"; 
+}
+
+.formrow {
+	padding: 0 5px 0 5px;
+	margin: 5px 0 0 0;
+}
+
+
+input {
+	font-size: 20px;
+}
+
+.info input, .info label {  /* targets inputs and labels of info class*/
+	display: inline-block; /* makes targeted block elemetns get inline with each other */
+	text-align: right; /* align input and label to the right */
+}
+  
+.info label {  
+	width: 10%;  /* the info class label will have a width of 10% parent, and min 5px */
+	min-width: 5px;
+}
+
+.info input {
+	width: 50%;    /* this increases the inputs of the .info class to 50% width of parent element, being the section*/
+
+}
+
+.question-block {
+	text-align: left;
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+	padding-top: 5px;
+}
+
+p {
+	margin-top: 5px;
+	padding-left: 15px;
+	font-size: 20px;
+  
+}
+
+.answers-list {
+	padding: 0;
+	list-style: none;
+}
+
+.question {
+	border: 0;
+	padding-bottom: 0;
+}
+
+footer {
+	background-color: #2a2a40;
+	display: flex; /* put the line break elements into a flexbox and then, center them*/
+	justify-content: center;  
+}
+
+footer, footer a {
+	color:  #dfdfe2; /* changes the color of the footer elements */
+}
+
+address {
+	text-align: center;
+	padding: 25px;
+}
+
+
+
+
+

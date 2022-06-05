@@ -1,0 +1,99 @@
+
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h3, b, footer {
+    color: #333333;
+}
+
+h1 {
+    font-size: 40px;
+}
+  
+.title-subtitle {
+    text-align: center;
+    padding-top: 30px;
+
+}
+
+.grey-background { /* main background */
+    background-color: #EEEEEE;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    margin: 35px 0;
+
+}
+
+.image-white-box { /* image box background*/
+    background-color: white;
+    width: 95%; /* Relative (auto-adjustes); 95% width of the parent element = main */
+    margin: 5px auto 50px auto; /* top margin 5px, bottom margin 50px, right and left, at auto (center element) */
+    
+}
+
+.image-white-box > img { /* image */
+    margin: 2px auto;  /* this gives 2px margin top and bottom, and even left and right margin (so it centers it) */
+    max-width: 1025px;
+    display: block; /* convert from default inline to block*/
+    width: 98%; /* Relative (auto-adjustes); 98% width of the parent element = image box*/
+}
+
+.photo-footnote {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+
+.ul-title {
+    text-align: center;
+    margin-bottom: 50px; /*matches the top margin from the .image-white.box */
+}
+
+.ul-section {
+    max-width: 500px; /* it can only go as wide as 500px, but can reduce as much as needed */
+    margin: 0 auto;
+
+}
+
+i, ul {
+    display: inline;
+}
+
+.quote {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+br {
+    height: 10px;
+}
+
+li {
+    margin: 19px 0;
+    line-height: 1.75;
+    margin-left: 45px;
+    margin-right: 20px;
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+
+#wikipedia-link:visited {
+    color: green;
+}
+
+
+/*
+1.
+
+
+*/

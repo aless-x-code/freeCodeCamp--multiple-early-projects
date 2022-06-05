@@ -1,0 +1,40 @@
+.flexbox-container {
+  /* this is the flexbox container; POSITION AND SPACING AROUND ITEMS */
+  background-color: yellow;
+  display: flex; /* transform into flexbox */
+  border: 3px solid orange;
+  width: 100%; /* This is deault; items will flex */
+  flex-direction: row; /* this is default. The property set become the main axis, the opposing becomes the cross axis*/
+  justify-content: space-evenly; /* this modifies the main axis */
+  /* space-evenly; /* space EVENLY before, between, and after */
+  /* space-around; /* space (small)before, between, and after(small) */
+  /* space-between; /* space inbetween items, but not to before/after*/
+  align-items: flex-start; /* this modifies cross axis; default is 100%; modifying this will scratch default 100%, rather return original height set */
+  align-content: center; /* default is strech; this position (flex-end, start, center, etc, space-between | even | around) flexboxes with 2 or more rows/colums */
+  flex-wrap: nowrap; /* default; nowrap. This wraps content when item's specified width is passed  */
+}
+
+.flexbox-item {
+  /* flex box items (x3) */
+  background-color: grey;
+  width: 250px; /* this will turn into max-width, due to flex, it will still shrink to below 250px down to min vw */
+  height: 300px; /* height won't shrink, it will stay at command */
+  border: 3px solid black;
+  margin: 10px; /* margin amount amount will not change even when box is flexed; regardless of absolute / relative*/
+}
+
+.flexbox-item-1 {
+  height: 100px;
+  flex-shrink: 1; /* commands item-1 not to shrink */
+  flex-grow: 1; /* commands item-1 to grow into empty space when box is expanded */
+  align-self: flex-end; /* overrides container alignment properties, rather individually */
+}
+
+.flexbox-item-2 {
+  height: 200px;
+  flex-grow: 2; /* instructs item-2 to flex into empty space 2/3 of the space relative to other */
+}
+
+.flexbox-item-3 {
+  height: 300px;
+}

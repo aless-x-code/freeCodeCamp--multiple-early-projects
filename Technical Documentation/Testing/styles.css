@@ -1,0 +1,110 @@
+* {
+  margin: 0; /* reset and avoid browsers defaults margins */
+  font-family: monospace, san-serif;
+  line-height: 1.5; /* space between lines of text in containers */
+}
+
+/* flowchart reference */
+/*  
+
+#navbar
+#navbar ul
+#navbar li
+
+#main-doc
+.main-section
+
+*/
+
+#navbar {
+  background-color: #00203fff;
+  color: #adefd1ff;
+  position: fixed; /* This means its fixed to the viewport, scrolling down will keep it in position */
+  left: 0;
+  top: 0; /* attached to the left and top */
+  height: 100%; /* height, 100% of the screen */
+  width: 320px;
+  z-index: 1;
+  margin: 0 0 !important; /* override and give 0 margin all around */
+}
+
+#navbar header {
+  color: ghostwhite;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+#navbar ul {
+  /* nav bar list of links container */
+  padding: 0; /* removes the bullet point <> text padding on the left */
+  width: 100%; /* 100% width of the container */
+  height: 88%; /* The side bar is already occupied 12% by the header, thus, the ul has to be 88%. Giving it 100% will give it a total lenght from the bottom of the page to the top of the page (100%), but, since the header is already there, it will have to push down negative the screen, and the content will not appear even when scrolling down */
+  overflow-y: scroll; /* this is used in conjunture with the height, they are codependent. This rules that the y overflow to sroll. While the 88% renders the container proportinately on the screen, without it negatively exiting*/
+  border-top: 1px solid rgb(248, 248, 255, 0.4);
+}
+
+#navbar li {
+  /* targets the navbar li items themselves  */
+  list-style: none;
+  border-top: 1px solid rgb(248, 248, 255, 0.4); /* giving border properties to the items */
+  border-bottom: 1px solid rgb(248, 248, 255, 0.4);
+  height: 50px; /* height of each list item */
+  font-size: 17px;
+  display: flex; /* list item = flex container */
+  align-items: center; /* align flex items vertically */
+  padding: 10px 0 10px 30px;
+}
+
+#navbar a {
+  text-decoration: none; /* removes link's decoration */
+  color: #adefd1ff;
+}
+
+/* main section */
+#main-doc {
+  background-color: #adefd1ff;
+  position: absolute; /* in regards to the body */
+  left: 301px; /* push away the left –past the side bar–  */
+  padding: 70px;
+  padding-left: 100px;
+}
+
+#main-doc header {
+  font-weight: 900;
+  font-size: 1.3rem;
+  padding: 20px 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Enables smooth scroll only for users who have browser set as "no-prefenrence"*/
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (max-width: 815px) {
+  /* for those screen smaller than 815px, apply... */
+  #navbar {
+    /* target the nav bar container */
+    width: 100%; /* spread with 100% */
+    max-height: 300px; /* tmax height */
+    position: absolute; /* Navbar was fixed before, as we scroll down the page we don't want it to remain taking part of the screen, rather, with absolute it will stay to the top */
+  }
+
+  #navbar ul {
+    /* targets the navbar unordered list container */
+    max-height: 200px; /* max height of 200 in the 300 container */
+    max-width: 95%; /* leave 2.5% space on each side */
+    margin: 0 auto; /* center it */
+    border: 1px solid rgb(248, 248, 255, 0.4);
+  }
+
+  #main-doc {
+    left: 0; /* previously, we gave main-doc a left: 301px; to leave room for the sidebar. Now, we need it to return to the left  */
+    top: 300px; /* but, now it has to come down from the top for space for the sidebar (well, topbar?) */
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

@@ -1,0 +1,34 @@
+:root {
+  font-family: Space Grotesk, sans-serif;
+}
+
+
+.flexbox-container { /* flexbox container */
+  background-color: yellow;
+  display: flex; /* turn into flex */
+  border: 3px solid orange;
+  flex-wrap: wrap-reverse; /* enable wrap, but reverse since we want the image to go up first */
+  justify-content: center; /* it centers the elements, side by side */
+  
+}
+
+.flexbox-item {  /* targets flexbox items (x2) */
+  background-color: white;
+  border: 3px solid black;
+  margin: 10px; /* specified margin amount will NOT flex*/
+  
+}
+ 
+.flexbox-item-1 {  /* item 1 */
+  flex-basis: 370px; /* this is the width at which it shrink to, and then wrap*/
+  flex-grow: 1; /* Enables item to grow beyond basis  */
+  max-width: 500px; /* This is the max width the item is allowed to reach */
+  max-height: 550px; /* this is the max heigh; it won't strech beyond this */
+  padding-left: 10px; /* sets some padding between text and left border within item-1*/
+  
+}
+
+.flexbox-item-2 { /* item 2 */
+  padding-left: 70px; /* this shift the image right a bit more for us*/
+}
+
